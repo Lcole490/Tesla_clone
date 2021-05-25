@@ -25,7 +25,7 @@ function Section({title, description, leftBtnText, rightBtnText, backgroundImg})
         </ButtonGroup>
 
 
-        <DownArrow>
+        {/* <DownArrow>
         <KeyboardArrowDownIcon 
         style= {{
             fontSize:75,
@@ -33,7 +33,9 @@ function Section({title, description, leftBtnText, rightBtnText, backgroundImg})
               height: 40,
                }}
              />
-        </DownArrow>
+        </DownArrow> */}
+
+        <DownArrow src="/images/down_arrow.svg" />
 
 
         </Buttons>
@@ -113,12 +115,12 @@ color: black;
 
 
 
-const DownArrow =styled.div `
+const DownArrow = styled.img `
 
-
+margin-top: 20px;
+color: black;
 height: 40px;
 overflow-x: hidden;
-overflow-y: hidden;
 animation: animateDown infinite 1.5s;
 `
 

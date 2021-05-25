@@ -9,7 +9,7 @@ function Home() {
             <Section 
             title = "Model S"
             description = "Order Online for Touchless Delivery"
-            backgroundImg = "tesla_model_s.jpg"
+            backgroundImg = "tesla_model_s.jpeg"
             leftBtnText = "Custom Order"
             rightBtnText = "Existing Inventory"/>
             {/* <Section />
