@@ -1,25 +1,47 @@
 import React from 'react'
 import styled from 'styled-components'
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
-function Section() {
+function Section({title, description, leftBtnText, rightBtnText, backgroundImg}) {
     return (
-        <Wrap>
+        <Wrap bgImage = {backgroundImg}>
            
         <ItemText>
-            <h1>Model S</h1>
-            <p>Order Online for Touchless Delivery</p>
+            <h1>{ title }</h1>
+            <p>{ description }</p>
         </ItemText>
 
+
+<Buttons>
         <ButtonGroup>
             <LeftButton>
-                Custom Order
+                {leftBtnText}
             </LeftButton>
 
             <RightButton>
-                Existing Inventory
+                {rightBtnText}
 
             </RightButton>
         </ButtonGroup>
+
+
+        <DownArrow>
+        <KeyboardArrowDownIcon 
+        style= {{
+            fontSize:75,
+             marginTop: 20,
+              height: 40,
+               }}
+             />
+        </DownArrow>
+
+
+        </Buttons>
+
+
+
+
+
         </Wrap>
     )
 }
@@ -34,7 +56,7 @@ const Wrap = styled.div `
  width: 100vw;
  height: 100vh;
  
-background-image: url('/images/tesla_model_s.jpeg');
+background-image: ${props => `url("/images/${props.bgImage}")`};
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
@@ -56,7 +78,10 @@ text-align: center;
 const ButtonGroup = styled.div `
 
 display: flex;
-margin-bottom: 30px;
+margin-bottom: 100px;
+@media (max-width: 768px){
+    flex-direction: column;
+}
 `
 
 
@@ -74,8 +99,32 @@ opacity: 0.85;
 text-transform: uppercase;
 font-size: 12px;
 cursor: pointer;
+margin: 10px;
 
 `
 
 
-const RightButton = styled(LeftButton) ``
+const RightButton = styled(LeftButton) `
+
+background: white;
+opacity: 0.65;
+color: black;
+`
+
+
+
+const DownArrow =styled.div `
+
+
+height: 40px;
+overflow-x: hidden;
+overflow-y: hidden;
+animation: animateDown infinite 1.5s;
+`
+
+
+const Buttons = styled.div `
+
+
+
+`
