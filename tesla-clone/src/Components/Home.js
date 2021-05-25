@@ -12,9 +12,29 @@ function Home() {
             backgroundImg = "tesla_model_s.jpeg"
             leftBtnText = "Custom Order"
             rightBtnText = "Existing Inventory"/>
-            {/* <Section />
-            <Section />
-            <Section /> */}
+
+
+            <Section 
+            title = "Model 3"
+            description = "Order Online for Touchless Delivery"
+            backgroundImg = "tesla_model_3.jpg"
+            leftBtnText = "Custom Order"
+            rightBtnText = "Existing Inventory"/>
+
+            <Section 
+            title = "Model X"
+            description = "Order Online for Touchless Delivery"
+            backgroundImg = "tesla_model_s.jpeg"
+            leftBtnText = "Custom Order"
+            rightBtnText = "Existing Inventory"/>
+
+            <Section 
+            title = "Model Y"
+            description = "Order Online for Touchless Delivery"
+            backgroundImg = "tesla_model_y.jpg"
+            leftBtnText = "Custom Order"
+            rightBtnText = "Existing Inventory"/>
+
             </Container>
         </div>
     )

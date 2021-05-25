@@ -25,15 +25,7 @@ function Section({title, description, leftBtnText, rightBtnText, backgroundImg})
         </ButtonGroup>
 
 
-        {/* <DownArrow>
-        <KeyboardArrowDownIcon 
-        style= {{
-            fontSize:75,
-             marginTop: 20,
-              height: 40,
-               }}
-             />
-        </DownArrow> */}
+       
 
         <DownArrow src="/images/down_arrow.svg" />
 
