@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
+import { Translate } from '@material-ui/icons';
 
 function Header() {
+
+
+
+    const [burgerMenuStatus, setBurgerMenuStatus] = useState(false);
+
+
     return (
         <Container>
             <Logo src="/images/tesla_logo.png"/>
@@ -19,11 +26,13 @@ function Header() {
             <RightMenu>
                      <a href = "#">Shop</a>
                      <a href = "#">Tesla Account</a>
-                     <CustomMenu />
+                     <CustomMenu onClick= {()=> setBurgerMenuStatus(true)}/>
             </RightMenu>
 
-            <BurgerMenu>
-                <BurgerClose />
+            <BurgerMenu show = {burgerMenuStatus} >
+                <BurgerCloseWrapper>
+                <BurgerClose onClick = {() => setBurgerMenuStatus(false)}/>
+                </BurgerCloseWrapper>
                 <li><a href = "#">Existing Inventory</a></li>
                 <li><a href = "#">Used Inventory</a></li>
                 <li><a href = "#">Trade-in</a></li>
@@ -130,6 +139,8 @@ display: flex;
 flex-direction: column;
 text-align: start;
 
+transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
+
 li{
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
@@ -146,5 +157,13 @@ a {
 
 const BurgerClose = styled(CloseIcon) `
 
+cursor: pointer;
+`
 
+
+const BurgerCloseWrapper = styled.div `
+
+
+display: flex;
+justify-content: flex-end;
 `
