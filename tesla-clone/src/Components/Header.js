@@ -3,12 +3,16 @@ import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { Translate } from '@material-ui/icons';
+import { selectCar } from "../features/car/carSlice";
+import { useSelector } from 'react-redux';
 
 function Header() {
 
 
 
     const [burgerMenuStatus, setBurgerMenuStatus] = useState(false);
+    const cars = useSelector(selectCar);
+
 
 
     return (
@@ -16,10 +20,16 @@ function Header() {
             <Logo src="/images/tesla_logo.png"/>
 
             <Menu>
-                    <a href= "#"> Model S</a>
+
+                {cars && cars.map((car, index) =>
+
+                    <a key= {index} href = "#"> {car}</a>
+                )}
+
+                    {/* <a href= "#"> Model S</a>           // This is what the above code does
                     <a href= "#"> Model 3</a>
                     <a href= "#"> Model X</a>
-                    <a href= "#"> Model Y</a>
+                    <a href= "#"> Model Y</a> */}
                     
             </Menu>
 
@@ -33,6 +43,10 @@ function Header() {
                 <BurgerCloseWrapper>
                 <BurgerClose onClick = {() => setBurgerMenuStatus(false)}/>
                 </BurgerCloseWrapper>
+
+                
+
+
                 <li><a href = "#">Existing Inventory</a></li>
                 <li><a href = "#">Used Inventory</a></li>
                 <li><a href = "#">Trade-in</a></li>
@@ -138,6 +152,7 @@ padding: 20px;
 display: flex;
 flex-direction: column;
 text-align: start;
+text-transform: uppercase;
 
 transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
 transition: transform 0.2s ease-in;
