@@ -153,6 +153,7 @@ display: flex;
 flex-direction: column;
 text-align: start;
 text-transform: uppercase;
+justify-content: space-between;
 
 transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
 transition: transform 0.2s ease-in;
